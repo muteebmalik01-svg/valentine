@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Minza 💌</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(#ffdde1, #ee9ca7);
+            color: #4a0033;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* NAVBAR */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.85);
+            position: sticky;
+            top: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #b3005e;
+            font-weight: bold;
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 35px 25px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* LETTER */
+        #letter {
+            text-align: left;
+            line-height: 1.9;
+            white-space: pre-line;
+            font-size: 1.05rem;
+        }
+
+        /* POETRY */
+        .poetry {
+            margin-top: 40px;
+            font-style: italic;
+            line-height: 1.8;
+            color: #b3005e;
+        }
+
+        /* NOTES */
+        .notes {
+            margin-top: 30px;
+            background: #ffe6ef;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .notes p {
+            margin: 8px 0;
+        }
+
+        /* PAGE NAV */
+        .page-nav {
+            margin-top: 35px;
+        }
+
+        .page-nav a {
+            margin: 0 15px;
+            color: #b3005e;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* HEART */
+        .heart {
+            position: fixed;
+            top: -10px;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="moments.html">Moments</a>
+        <a href="valentine.html">Valentine</a>
+    </nav>
+
+    <script>
+        /* HEART RAIN */
+        setInterval(() => {
+            const h = document.createElement("div");
+            h.className = "heart";
+            h.innerHTML = "❤️";
+            h.style.left = Math.random() * 100 + "vw";
+            h.style.animationDuration = (Math.random() * 3 + 2) + "s";
+            document.body.appendChild(h);
+            setTimeout(() => h.remove(), 5000);
+        }, 300);
+
+        /* LETTER TYPING */
+        const text = `My Dearest Minza ❤️
+
+4th January…
+Wo din jab meri zindagi ne
+tumhara naam lena shuru kiya.
+
+Tum sirf mohabbat nahi,
+tum mera sukoon,
+meri aadat,
+aur meri dua ho.
+
+Ye pehla Valentine sirf ek din nahi,
+ye us hamesha ke waade ki shuruaat hai
+jo dil ne tumse kiya hai.
+
+Forever Yours,
+💞`;
+
+        let i = 0;
+        function typeLetter() {
+            if (i < text.length) {
+                document.getElementById("letter").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeLetter, 55);
+            }
+        }
+        window.onload = typeLetter;
+    </script>
+
+    <div class="container">
+        <h1>Happy First Valentine Minza 💖</h1>
+
+        <div id="letter"></div>
+
+        <div class="poetry">
+            “Minza, tum wo khwab ho
+            jo aankhon se pehle dil ne dekha,
+            aur tum wo dua ho
+            jo qabool hone ke baad bhi khatam nahi hoti.” 🌹
+        </div>
+
+        <div class="notes">
+            <p>🌸 Tumhari muskurahat meri kamzori hai</p>
+            <p>❤️ Tumhara naam meri har dhadkan ka raaz hai</p>
+            <p>💫 Tum saath ho to har kal khoobsurat hai</p>
+        </div>
+
+        <div class="page-nav">
+            <a href="moments.html">⬅ Previous</a>
+            <a href="index.html">Home 🏠</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
